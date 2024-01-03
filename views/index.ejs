@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b6ef7650fd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+    <title>Main page <%= title %></title>
+</head>
+<body>
+    <div id="timeline">
+        Timeline
+        <p><%= firstname %></p>
+    </div>
+    <a href="/logout-user">Log out</a>
+    <form action="/create-post" method="POST" id="get-post">
+        <textarea name="review" id="review" rows="10" cols="30" minlength="25" placeholder="Type your message here" required></textarea>
+        <button type="submit" id="get-post-btn">Post a message</button>
+    </form>
+    <div id="posts">
+        <% posts.forEach(post => { %>
+            <div id="one-postt">
+                <p><%= post.created_at %></p>
+            <div>
+                <p id="post-text" style="padding-left: 20px; margin-bottom: 25px;"><%= post.review %></p>
+            </div>
+            <div>
+                <div id="btns">
+                    <form action="/posts/<%= post._id %>/delete" method="post"><button id="delete">Delete</button></form>
+                    <form action="/posts/<%= post._id %>/edit" method="post"><button id="edit">Edit</button></form>
+                    <form action="/posts/<%= post._id %>/comment"><button id="comment">Comment</button></form>
+                </div>
+                <% post.comments.forEach(comment => { %>
+                    <p><b><%= comment.user_id.firstname %></b> - <%= comment.comment %></p>
+                <% }) %>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>

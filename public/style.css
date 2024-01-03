@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+#get-post, #posts{
+    width: 50%;
+    
+}
+#title, #review{
+    width: 100%;
+    padding: 10px 20px;
+}
+#get-post-btn{
+    width: 25%;
+    align-self: flex-end;
+    color: white;
+    background-color: rgb(238, 77, 9);
+}
+#post-ares{
+    text-indent: 20px;
+}
+#timeline{
+    padding: 10px;
+    border: 1px solid rgb(10, 10, 9);
+    font-size: 20px;
+    width: 50%;
+    background-color: rgb(238, 77, 9);;
+}
+#one-postt{
+    border: 1px solid black;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#btns{
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    
+}
+.user-list-container a:hover {
+    color: #b4ff33;
+}
+form {
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgb(230, 172, 113);
+    box-shadow: 0 0 10px rgba(206, 104, 104, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+form textarea {
+    resize: none;
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+form button {
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(238, 77, 9);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    display: flex;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #b4ff33;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        div {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+      
+        
+    
+        
