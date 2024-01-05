@@ -4,7 +4,7 @@ const Comment = require('../model/commentModel')
 const createComment = async(req,res)=>{
     const {id} = req.params;
     const posts = await Post.findById(id)
-    res.render('comment', {posts})
+    //res.render('comment', {posts})
 }
 
 const addComment =async (req,res)=> {

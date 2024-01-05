@@ -17,8 +17,12 @@ const getPosts = (req,res) => {
     })
     
     .sort({created_at : -1})
-    .then((result) => res.render('index', {posts : result, title: 'Posts'}) )
-    .catch((err)=> console.log(err))
+    //.then((result) => 
+
+    
+    
+    //)
+    //.catch((err)=> console.log(err))
 }
 
 const createPost = async (req, res) => {

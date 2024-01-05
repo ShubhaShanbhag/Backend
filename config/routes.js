@@ -17,4 +17,8 @@ route.post('/signup', userController.signupUser)
 route.post('/login', userController.loginUSer)
 route.get('/logout-user',userController.logoutUser)
 
+
+//React
+//route.get('/')
+
 module.exports= route;
