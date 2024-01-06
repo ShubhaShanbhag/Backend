@@ -1,5 +1,5 @@
 const Post = require('../model/postModel')
-const Comment = require('../model/commentModel')
+const doctorModel = require('../model/doctorModel')
 
 const createComment = async(req,res)=>{
     const {id} = req.params;
