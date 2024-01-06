@@ -8,17 +8,21 @@ const getPosts = (req,res) => {
     .populate("user_id", "firstname")
     
     .populate({
-    path: 'comments',
-    model: 'Comment',
-    populate: {
-        path: 'user_id',
-        model: 'User'
-    }
+        path: 'comments',
+        model: 'Comment',
+        populate: {
+            path: 'user_id',
+            model: 'User'
+        }
     })
     
     .sort({created_at : -1})
-    .then((result) => res.render('index', {posts : result, title: 'Posts'}) )
-    .catch((err)=> console.log(err))
+    //.then((result) => 
+
+    
+    
+    //)
+    //.catch((err)=> console.log(err))
 }
 
 const createPost = async (req, res) => {
@@ -26,8 +30,7 @@ const createPost = async (req, res) => {
         const newPost = new Post({
             review: req.body.review,
         });
-        await newPost.save();
-        res.redirect('/');
+        // await newPost.save();
     } catch (error) {
         // Handle the error appropriately (e.g., log the error, send an error response)
         console.error(error);
@@ -36,20 +39,17 @@ const createPost = async (req, res) => {
 };
 
 const deletePost = async (req,res) => {
-    const {id} = req.params;
-    await Post.findOneAndDelete(id);
-    res.redirect('/')
+    // const {id} = req.params;
+    // await Post.findOneAndDelete(id);
 }
 
 const editPost = async(req,res)=> {
-    const {id} = req.params;
-    const post = await Post.findById(id)
-    res.render('edit', {post})
+    // const {id} = req.params;
+    // const post = await Post.findById(id)
 }
 const updatePost = async (req,res) => {
-    const {id} = req.params;
-    await Post.findByIdAndUpdate(id,req.body,{runValidators:true})
-    res.redirect('/')
+    // const {id} = req.params;
+    // await Post.findByIdAndUpdate(id,req.body,{runValidators:true})
 }
 
     

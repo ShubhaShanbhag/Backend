@@ -12,9 +12,7 @@ route.post('/posts/:id/edit', postController.editPost)
 route.post('/posts/:id/update', postController.updatePost)
 route.get('/posts/:id/comment', commentController.createComment)
 route.post('/posts/:id/addComment',auth.userAuth, commentController.addComment)
-route.get('/login', auth.loginAuth ,userController.loginPage)
 route.post('/signup', userController.signupUser)
 route.post('/login', userController.loginUSer)
-route.get('/logout-user',userController.logoutUser)
 
 module.exports= route;

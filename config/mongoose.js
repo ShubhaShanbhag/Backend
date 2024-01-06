@@ -1,6 +1,6 @@
 //mongoose.js
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://wafa:1234@cluster0.rilnusk.mongodb.net/wafa?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://mmfinalproject24:finalproject24@cluster0.ffyopr5.mongodb.net/')
 .then(res =>{console.log('DB is connected')})
 .catch(err => {console.log(err)});
 
