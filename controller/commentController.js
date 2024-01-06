@@ -13,12 +13,10 @@ const addComment =async (req,res)=> {
         post_id : req.params.id,
         user_id : res.locals.id
     })
-    await comment.save()
-    const commentedPost = await Post.findById(req.params.id)
-    commentedPost.comments.push(comment._id)
-    await commentedPost.save()
-    res.redirect('/')
-
+    // await comment.save()
+    // const commentedPost = await Post.findById(req.params.id)
+    // commentedPost.comments.push(comment._id)
+    // await commentedPost.save()
 }
 
 module.exports= {createComment, addComment}
