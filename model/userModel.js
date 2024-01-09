@@ -15,27 +15,12 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : true
      },
-     age: {
-        type: Number,
-        default: "",
-      },
-      gender: {
-        type: String,
-        default: "neither",
-      },
-      mobile: {
-        type: Number,
-        default: "",
-      },
-      address: {
-        type: String,
-        default: "",
-      },
-      status: {
-        type: String,
-        default: "pending",
-      },
+     password:{
+      type: String,
+      required :true 
+     }
     
      }, {timestamps: true})
-const User = mongoose.model('User', userSchema)
-module.exports = User;
+
+        const User = mongoose.model('User', userSchema)
+        module.exports = User;

@@ -23,4 +23,4 @@ const schema = mongoose.Schema(
 
 const Notification = mongoose.model("Notification", schema);
 
-module.exports = Notification;
+//module.exports = Notification;
