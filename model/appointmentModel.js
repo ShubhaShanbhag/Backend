@@ -12,11 +12,15 @@ const schema = mongoose.Schema(
       doctorId: {
         type: mongoose.SchemaTypes.ObjectId,
         ref: "User",
-        required: true,
+        required: true
+      },
+      phoneNo:{
+        type:Number,
+        required:true
       },
       date: {
         type: String,
-        required: true,
+        required: true
       },
       time: {
         type: String,
