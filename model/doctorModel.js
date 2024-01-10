@@ -1,32 +1,25 @@
 const mongoose = require('mongoose')
-const moment = require('moment/moment')
 
 const doctorSchema = new mongoose.Schema({
 
-      name:{
+     firstname:{
         type : String,
         required : true,
-        minLength: 3
-      },
-      specialization: {
-        type: String,
-        required: true,
-      },
-      experience: {
-        type: Number,
-        required: true,
-      },
-      email:{
+        minLength:3
+    },
+     lastname:{
         type : String,
         required : true
-      },
-        mobile: {
-        type: Number,
-        default: "",
-      }, 
-      
-    },
+     },
+     email:{
+        type : String,
+        required : true
+     },
+     password:{
+      type: String,
+      required :true 
+     }
     
-   {timestamps: true})
-
-module.exports = mongoose.model('Doctor', doctorSchema);
+     }, {timestamps: true})
+        const Doctor = mongoose.model('Doctor', doctorSchema)
+        module.exports = Doctor;
