@@ -22,13 +22,19 @@ const doctorSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  date: {
-    type: Date,
-    required: true
-  },
-  time: {
-    type: String,
-    required: true
+  availability: {
+    days: [{
+      type: String,
+      enum: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
+    }],
+    startTime: {
+      type: String,
+      required: true
+    },
+    endTime: {
+      type: String,
+      required: true
+    }
   },
   experience: {
     type: Number,
@@ -50,3 +56,6 @@ const doctorSchema = new mongoose.Schema({
 
 const Doctor = mongoose.model('Doctor', doctorSchema);
 module.exports = Doctor;
+
+
+
