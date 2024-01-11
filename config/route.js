@@ -6,16 +6,19 @@
  const userController = require('../controller/userController')
  //const auth = require('../middleware/auth')
 
-//  route.get('/',auth.userAuth, postController.getPosts);
-//  route.post('/create-post',auth.userAuth, postController.createPost)
-//  route.post('/posts/:id/delete', postController.deletePost)
-//  route.post('/posts/:id/edit', postController.editPost)
-//  route.post('/posts/:id/update', postController.updatePost)
-//  route.get('/posts/:id/comment', commentController.createComment)
-//  route.post('/posts/:id/addComment',auth.userAuth, commentController.addComment)
+//login  and reg
  route.post('/register/Doctor', doctorController.doctorRegister)
  route.post('/login/Doctor', doctorController.doctorLogin)
  route.post('/register/client', userController.userRegister)
  route.post('/login/client', userController.userLogin)
+
+ // get all doctors
+ route.get("/DoctorPages/DoctorHomePage", auth, userController.getAllDocotrsController);
+
+ //BOOK APPOINTMENT
+route.post('/pages/BookAppointment', auth, userController.bookAppointmnetController);
+
+route.post("/pages/BookAppointment", auth,  userController.bookingAvailabilityController)
+     
 
  module.exports= route;
