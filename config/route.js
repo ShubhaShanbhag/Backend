@@ -13,12 +13,11 @@
  route.post('/login/client', userController.userLogin)
 
  // get all doctors
- route.get("/DoctorPages/DoctorHomePage", auth, userController.getAllDocotrsController);
+ route.get("/doctors/git-all-doctors", userController.getAllDocotrsController);
 
  //BOOK APPOINTMENT
-route.post('/pages/BookAppointment', auth, userController.bookAppointmnetController);
-
-route.post("/pages/BookAppointment", auth,  userController.bookingAvailabilityController)
+// route.post('/pages/BookAppointment', userController.bookAppointmnetController);
+// route.post("/pages/BookAppointment",  userController.bookingAvailabilityController);
      
 
  module.exports= route;
