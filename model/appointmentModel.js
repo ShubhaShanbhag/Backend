@@ -34,4 +34,4 @@ const schema = mongoose.Schema(
   
   const Appointment = mongoose.model("Appointment", schema);
   
-  //module.exports = Appointment;
+  module.exports = Appointment;
