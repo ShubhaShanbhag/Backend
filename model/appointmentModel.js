@@ -14,7 +14,7 @@ const schema = mongoose.Schema(
         ref: "User",
         required: true,
       },
-      date: {
+      day: {
         type: String,
         required: true,
       },
