@@ -40,9 +40,23 @@ const bookAppointmentController = async (req, res) => {
       }
     };
 
+    const setNewAppointment = (req, res) => {
+      let newAppointment = new AppointmentModel(req.body);
+
+      if(newAppointment) {
+        newAppointment.save()
+          .then(() => {
+            res.send("Appointment is sent to the doctor")
+          })
+          .catch(err => {
+            res.status(500).send(err)
+          })
+      }
+    }
   
 
   module.exports= {
       bookAppointmentController,
-      getallappointments
+      getallappointments,
+      setNewAppointment
 }

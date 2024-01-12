@@ -18,6 +18,7 @@
 
  //BOOK APPOINTMENT
  route.post('/pages/BookAppointment', appointmentController.bookAppointmentController);
+ route.post('/set-appointment', appointmentController.setNewAppointment);
 
 
  module.exports= route;
