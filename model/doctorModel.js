@@ -24,7 +24,7 @@ const doctorSchema = new mongoose.Schema({
   },
   availability: {
     days: [{
-      type: String,
+      type: Object,
       enum: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
     }],
     startTime: {
