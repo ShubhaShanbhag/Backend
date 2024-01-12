@@ -133,8 +133,8 @@ const getDoctorByIdController = async (req, res) => {
     }
 
     // Assuming you want to send specific properties of the doctor, adjust as needed
-    const { _id, firstname, lastname, phoneNumber, address } = doctor;
-    res.json({ _id, firstname, lastname, phoneNumber, address });
+    // const { _id, firstname, lastname, phoneNumber, address } = doctor;
+    res.json(doctor);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal Server Error' });
