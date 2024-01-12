@@ -4,7 +4,18 @@ const jwt = require('jsonwebtoken');
 
 // Doctor register
 const doctorRegister = async (req, res) => {
-  const { firstname, lastname, email, password, specialization, date, time, experience, feePerConsultation, phoneNumber, address } = req.body;
+  const {
+    firstname,
+    lastname,
+    email,
+    password,
+    specialization,
+    availability,
+    experience,
+    feePerConsultation,
+    phoneNumber,
+    address
+  } = req.body;
 
   try {
     const existingDoctor = await doctorModel.findOne({ email });
@@ -21,8 +32,11 @@ const doctorRegister = async (req, res) => {
       email,
       password: hashedPassword,
       specialization,
-      date,
-      time,
+      availability: {
+        days: availability.days,
+        startTime: availability.startTime,
+        endTime: availability.endTime
+      },
       experience,
       feePerConsultation,
       phoneNumber,
@@ -68,5 +82,6 @@ module.exports = {
   doctorRegister,
   doctorLogin
 };
+
 
 

@@ -61,10 +61,28 @@ const  userRegister = async (req, res) => {
       })
   };
 
-  module.exports = {
-    userRegister,
-    userLogin,
-    getAllDocotrsController,
-  
+
+const getDoctorByIdController = async (req, res) => {
+  try {
+    const doctor = await DoctorModel.findById(req.params.id);
+    if (!doctor) {
+      return res.status(404).json({ message: 'Doctor not found' });
+    }
+
+    // Assuming you want to send specific properties of the doctor, adjust as needed
+    // const { _id, firstname, lastname, phoneNumber, address } = doctor;
+    res.json(doctor);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
+module.exports = {
+  userRegister,
+  userLogin,
+  getAllDocotrsController,
+  getDoctorByIdController,
+
   }
 

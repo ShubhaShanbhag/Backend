@@ -14,6 +14,7 @@
 
  // get all doctors
  route.get("/doctors/git-all-doctors", userController.getAllDocotrsController);
+ route.get("/doctors/:id", userController.getDoctorByIdController);
 
  //BOOK APPOINTMENT
  route.post('/pages/BookAppointment', appointmentController.bookAppointmentController);
