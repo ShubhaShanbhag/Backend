@@ -1,7 +1,7 @@
  const express = require('express');
  const route = express.Router();
  //const postController = require('../controller/postController')
-// const commentController = require('../controller/commentController')
+ const appointmentController = require('../controller/appointmentController')
  const doctorController = require('../controller/doctorController')
  const userController = require('../controller/userController')
  //const auth = require('../middleware/auth')
@@ -17,8 +17,7 @@
  route.get("/doctors/:id", userController.getDoctorByIdController);
 
  //BOOK APPOINTMENT
-// route.post('/pages/BookAppointment', userController.bookAppointmnetController);
-// route.post("/pages/BookAppointment",  userController.bookingAvailabilityController);
-     
+ route.post('/pages/BookAppointment', appointmentController.bookAppointmentController);
+
 
  module.exports= route;
