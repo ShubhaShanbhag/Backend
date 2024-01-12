@@ -53,10 +53,24 @@ const bookAppointmentController = async (req, res) => {
           })
       }
     }
+
+    const getDoctorAppointment = (req, res) => {
+      if(req.params.id) {
+        AppointmentModel.find({doctorId: req.params.id})
+          .populate("userId")
+          .then(result => {
+            res.send(result)
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      }
+    }
   
 
   module.exports= {
       bookAppointmentController,
       getallappointments,
-      setNewAppointment
+      setNewAppointment,
+      getDoctorAppointment
 }

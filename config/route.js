@@ -19,6 +19,7 @@
  //BOOK APPOINTMENT
  route.post('/pages/BookAppointment', appointmentController.bookAppointmentController);
  route.post('/set-appointment', appointmentController.setNewAppointment);
+ route.get('/get-doctor-appointments/:id', appointmentController.getDoctorAppointment)
 
 
  module.exports= route;
